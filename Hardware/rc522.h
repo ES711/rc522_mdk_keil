@@ -10,7 +10,7 @@
 #define PCD_TRANSCEIVE	0x0C   //Transmit and receive data,
 #define PCD_RESETPHASE	0x0F   //Reset
 #define PCD_CALCCRC	0x03   //CRC Calculate
-#define MAXLEN 16
+#define MAXLEN 18
 //RC522 register
 //page 0
 #define MFRC522_REG_RESERVED00			0x00    
@@ -98,7 +98,8 @@
 #define PICC_RESTORE					0xC2   // transfer block data to the buffer
 #define PICC_TRANSFER					0xB0   // save the data in the buffer
 #define PICC_HALT						0x50   // Sleep
-
+#define KEYA 0X60
+#define KEYB 0X61
 //just for rc522 status
 /*
 MI_OK = 0
@@ -124,5 +125,10 @@ extern RC522_Status RC522_Request(uint8_t reqMode, uint8_t* type);
 extern RC522_Status anticoll(uint8_t* cardSerialNum);
 extern void calculateCRC(uint8_t* txData, uint8_t len, uint8_t* rxData);
 extern void halt();
-extern RC522_Status getSerialNum(uint8_t* cardSerialNum);
+//extern RC522_Status getSerialNum(uint8_t* cardSerialNum);
+extern uint8_t cardSelect(uint8_t* cardSerialNum);
+extern uint8_t cardAuthPWD(uint8_t authMode, uint8_t blockAddr, uint8_t* cardKey, uint8_t* cardSerialNum);
+extern uint8_t readBlock(uint8_t blockAddr, uint8_t* rxData);
+extern uint8_t writeBlock(uint8_t blockAddr, uint8_t* txData);
+extern void writeCard(uint8_t* cardSerialNum, uint8_t keyType, uint8_t* key, uint8_t rw, uint8_t blockAddr, uint8_t* txData);
 #endif

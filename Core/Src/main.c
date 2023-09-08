@@ -93,24 +93,49 @@ int main(void)
   MX_USART3_UART_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-	printf("system start\t\n");
+	printf("system start\r\n");
 	RC522_Init();
 	//printf("system start\n");
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  uint8_t cardSerialNum[5];
+  uint8_t cardSerialNum[4] = {0x42, 0xBA, 0x47, 0x1E};
+	uint8_t KEY_A[6] = {
+		0xFF, 0xFF, 0xFF, 
+		0xFF, 0xFF, 0xFF};
+	uint8_t data[] = {0x11, 0x66, 0x15, 0x44, 0x65, 0x22, 0x45, 0x88, 0x11, 0x66, 0x15, 0x44,0x65, 0x22, 0x45, 0x88};
+	uint8_t addr = 0x08;
+	writeCard(cardSerialNum, 0, KEY_A, 1, addr, data);
+	//uint8_t data_1[] = {0x11, 0x66, 0x15, 0x44, 0x65, 0x22, 0x45, 0x88, 0x11, 0x66, 0x15, 0x44,0x65, 0x22, 0x45, 0x88};
+	//writeCard(cardSerialNum, 0, KEY_A, 0, addr, data_1);
+	//writeCard(cardSerialNum, 0, KEY_A, 1, addr, data);
+	//status = writeBlock(addr, data);
+	//printf("write status %d", status);
 	while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		if(getSerialNum(cardSerialNum) == MI_OK){
-			printf("%x %x %x %x %x\t\n", cardSerialNum[0], cardSerialNum[1], cardSerialNum[2], cardSerialNum[3], cardSerialNum[4]);
-		}else{
-			//printf("fail\n");
-		}
+		//writeCard(cardSerialNum, 0, KEY_A, 0, 0x11, data);
+		/*
+		
+		*/
+//		if(getSerialNum(cardSerialNum) == MI_OK){
+//			printf("find card:%x %x %x %x\r\n", cardSerialNum[0], cardSerialNum[1], cardSerialNum[2], cardSerialNum[3]);
+//			HAL_Delay(1);
+//			writeCard(cardSerialNum, 0, KEY_A, 1, 0x10, data);
+//			/*
+//			printf("read data from 0x10 block:");
+//			for(int i=0;i<sizeof(data);i++){
+//				printf("%x ", data[i]);
+//			}
+//			printf("\r\n");
+//			*/
+//		}else{
+//			//printf("fail\n");
+//		}
+//		//writeCard(cardSerialNum, 0, KEY_A, 1, 0x10, data);
 		HAL_Delay(1000);
   }
   /* USER CODE END 3 */

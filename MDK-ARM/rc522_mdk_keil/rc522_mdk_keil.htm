@@ -3,11 +3,11 @@
 <title>Static Call Graph - [rc522_mdk_keil\rc522_mdk_keil.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image rc522_mdk_keil\rc522_mdk_keil.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Sat Sep  2 01:33:44 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Sat Sep  9 01:55:32 2023
 <BR><P>
-<H3>Maximum Stack Usage =        184 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        224 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-main &rArr; SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_TIM_Base_Init &rArr; TIM_Base_SetConfig
+main &rArr; writeCard &rArr; writeBlock &rArr; CMDtoCard &rArr; setRegister
 <P>
 <H3>
 Mutually Recursive functions
@@ -134,7 +134,7 @@ Global Symbols
 <P><STRONG><a name="[66]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(.text)
 </UL>
-<P><STRONG><a name="[a6]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[ab]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[68]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -144,15 +144,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[a7]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[ac]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[a8]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[ad]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[a9]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[ae]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[aa]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[af]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[ab]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[b0]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_stm32f429xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
@@ -431,11 +431,11 @@ Global Symbols
 <P><STRONG><a name="[6a]"></a>__aeabi_uldivmod</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, uldiv.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = __aeabi_uldivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
+<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetConfig
 </UL>
 
@@ -443,13 +443,13 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[ac]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[b1]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
 <P><STRONG><a name="[6b]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[ad]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
+<P><STRONG><a name="[b2]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 
 <P><STRONG><a name="[69]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
@@ -457,7 +457,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[ae]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[b3]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
 <P><STRONG><a name="[6e]"></a>AntennaON</STRONG> (Thumb, 192 bytes, Stack size 16 bytes, rc522.o(.text.AntennaON))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = AntennaON &rArr; setRegister
@@ -476,15 +476,20 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
-<P><STRONG><a name="[72]"></a>CMDtoCard</STRONG> (Thumb, 1560 bytes, Stack size 48 bytes, rc522.o(.text.CMDtoCard))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = CMDtoCard &rArr; clearRegister
+<P><STRONG><a name="[72]"></a>CMDtoCard</STRONG> (Thumb, 1680 bytes, Stack size 48 bytes, rc522.o(.text.CMDtoCard))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = CMDtoCard &rArr; setRegister
 </UL>
-<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearRegister
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setRegister
+<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setRegister
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearRegister
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anticoll
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSerialNum
+<BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeBlock
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readBlock
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cardAuthPWD
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;halt
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anticoll
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RC522_Request
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeCard
 </UL>
 
 <P><STRONG><a name="[7]"></a>DebugMon_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.DebugMon_Handler))
@@ -501,7 +506,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RC522_Init
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[85]"></a>HAL_GPIO_Init</STRONG> (Thumb, 422 bytes, Stack size 44 bytes, stm32f4xx_hal_gpio.o(.text.HAL_GPIO_Init))
@@ -513,13 +519,14 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[6f]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text.HAL_GPIO_WritePin))
-<BR><BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearRegister
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setRegister
+<BR><BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cardAuthPWD
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculateCRC
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anticoll
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anticoll
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RC522_Request
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CMDtoCard
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setRegister
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AntennaON
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSerialNum
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearRegister
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RC522_Init
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 </UL>
@@ -587,14 +594,14 @@ Global Symbols
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
 <P><STRONG><a name="[7a]"></a>HAL_RCC_GetClockConfig</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(.text.HAL_RCC_GetClockConfig))
 <BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
 
-<P><STRONG><a name="[9f]"></a>HAL_RCC_GetPCLK1Freq</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(.text.HAL_RCC_GetPCLK1Freq))
+<P><STRONG><a name="[a0]"></a>HAL_RCC_GetPCLK1Freq</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(.text.HAL_RCC_GetPCLK1Freq))
 <BR><BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetConfig
 </UL>
 
@@ -616,7 +623,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
 <P><STRONG><a name="[83]"></a>HAL_SPI_Init</STRONG> (Thumb, 180 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text.HAL_SPI_Init))
@@ -691,13 +698,13 @@ Global Symbols
 <P><STRONG><a name="[8a]"></a>HAL_TIM_IRQHandler</STRONG> (Thumb, 368 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text.HAL_TIM_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_TIM_IRQHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_DelayElapsedCallback
+<BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_CaptureCallback
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_PulseFinishedCallback
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_DelayElapsedCallback
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_TriggerCallback
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_BreakCallback
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_CommutCallback
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_CaptureCallback
-<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_PulseFinishedCallback
-<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
 </UL>
 <BR>[Called By]<UL><LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_UP_TIM10_IRQHandler
 </UL>
@@ -799,15 +806,28 @@ Global Symbols
 <P><STRONG><a name="[8]"></a>PendSV_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.PendSV_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
-<P><STRONG><a name="[9d]"></a>RC522_Init</STRONG> (Thumb, 1080 bytes, Stack size 16 bytes, rc522.o(.text.RC522_Init))
+<P><STRONG><a name="[9d]"></a>RC522_Init</STRONG> (Thumb, 1372 bytes, Stack size 16 bytes, rc522.o(.text.RC522_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = RC522_Init &rArr; HAL_SPI_Transmit &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AntennaON
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearRegister
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;puts
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[9e]"></a>RC522_Request</STRONG> (Thumb, 228 bytes, Stack size 48 bytes, rc522.o(.text.RC522_Request))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = RC522_Request &rArr; CMDtoCard &rArr; setRegister
+</UL>
+<BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CMDtoCard
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setRegister
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearRegister
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeCard
 </UL>
 
 <P><STRONG><a name="[6]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.SVC_Handler))
@@ -816,7 +836,7 @@ Global Symbols
 <P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.SysTick_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
-<P><STRONG><a name="[9e]"></a>SystemClock_Config</STRONG> (Thumb, 176 bytes, Stack size 88 bytes, main.o(.text.SystemClock_Config))
+<P><STRONG><a name="[9f]"></a>SystemClock_Config</STRONG> (Thumb, 176 bytes, Stack size 88 bytes, main.o(.text.SystemClock_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_TIM_Base_Init &rArr; TIM_Base_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
@@ -848,24 +868,37 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
-<P><STRONG><a name="[a0]"></a>anticoll</STRONG> (Thumb, 228 bytes, Stack size 24 bytes, rc522.o(.text.anticoll))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = anticoll &rArr; CMDtoCard &rArr; clearRegister
+<P><STRONG><a name="[a1]"></a>anticoll</STRONG> (Thumb, 258 bytes, Stack size 48 bytes, rc522.o(.text.anticoll))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = anticoll &rArr; CMDtoCard &rArr; setRegister
+</UL>
+<BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CMDtoCard
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setRegister
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearRegister
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeCard
+</UL>
+
+<P><STRONG><a name="[a2]"></a>calculateCRC</STRONG> (Thumb, 940 bytes, Stack size 40 bytes, rc522.o(.text.calculateCRC))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = calculateCRC &rArr; setRegister
+</UL>
+<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setRegister
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearRegister
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeBlock
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readBlock
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;halt
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeCard
+</UL>
+
+<P><STRONG><a name="[a3]"></a>cardAuthPWD</STRONG> (Thumb, 226 bytes, Stack size 48 bytes, rc522.o(.text.cardAuthPWD))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = cardAuthPWD &rArr; CMDtoCard &rArr; setRegister
 </UL>
 <BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CMDtoCard
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSerialNum
-</UL>
-
-<P><STRONG><a name="[a2]"></a>calculateCRC</STRONG> (Thumb, 808 bytes, Stack size 40 bytes, rc522.o(.text.calculateCRC))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = calculateCRC &rArr; clearRegister
-</UL>
-<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearRegister
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setRegister
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-</UL>
-<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSerialNum
+<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeCard
 </UL>
 
 <P><STRONG><a name="[73]"></a>clearRegister</STRONG> (Thumb, 324 bytes, Stack size 24 bytes, rc522.o(.text.clearRegister))
@@ -874,7 +907,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculateCRC
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anticoll
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RC522_Request
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CMDtoCard
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeCard
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RC522_Init
 </UL>
 
 <P><STRONG><a name="[67]"></a>fputc</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, usart.o(.text.fputc))
@@ -882,69 +919,108 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> printf5.o(i.__0printf$5)
 </UL>
-<P><STRONG><a name="[a3]"></a>getSerialNum</STRONG> (Thumb, 246 bytes, Stack size 32 bytes, rc522.o(.text.getSerialNum))
-<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = getSerialNum &rArr; anticoll &rArr; CMDtoCard &rArr; clearRegister
+<P><STRONG><a name="[a4]"></a>halt</STRONG> (Thumb, 48 bytes, Stack size 40 bytes, rc522.o(.text.halt))
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = halt &rArr; CMDtoCard &rArr; setRegister
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculateCRC
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anticoll
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CMDtoCard
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeCard
 </UL>
 
-<P><STRONG><a name="[64]"></a>main</STRONG> (Thumb, 96 bytes, Stack size 16 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = main &rArr; SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_TIM_Base_Init &rArr; TIM_Base_SetConfig
+<P><STRONG><a name="[64]"></a>main</STRONG> (Thumb, 116 bytes, Stack size 40 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = main &rArr; writeCard &rArr; writeBlock &rArr; CMDtoCard &rArr; setRegister
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSerialNum
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeCard
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RC522_Init
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM2_Init
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USART3_UART_Init
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_SPI2_Init
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;puts
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
+<P><STRONG><a name="[a6]"></a>readBlock</STRONG> (Thumb, 80 bytes, Stack size 48 bytes, rc522.o(.text.readBlock))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = readBlock &rArr; CMDtoCard &rArr; setRegister
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculateCRC
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CMDtoCard
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeCard
+</UL>
+
 <P><STRONG><a name="[71]"></a>setRegister</STRONG> (Thumb, 322 bytes, Stack size 24 bytes, rc522.o(.text.setRegister))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = setRegister
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculateCRC
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anticoll
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RC522_Request
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CMDtoCard
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AntennaON
 </UL>
 
-<P><STRONG><a name="[a4]"></a>__0printf$5</STRONG> (Thumb, 22 bytes, Stack size 24 bytes, printf5.o(i.__0printf$5), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<P><STRONG><a name="[a7]"></a>writeBlock</STRONG> (Thumb, 344 bytes, Stack size 48 bytes, rc522.o(.text.writeBlock))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = writeBlock &rArr; CMDtoCard &rArr; setRegister
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculateCRC
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CMDtoCard
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;puts
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeCard
 </UL>
 
-<P><STRONG><a name="[af]"></a>__1printf$5</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf5.o(i.__0printf$5), UNUSED)
+<P><STRONG><a name="[a5]"></a>writeCard</STRONG> (Thumb, 484 bytes, Stack size 64 bytes, rc522.o(.text.writeCard))
+<BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = writeCard &rArr; writeBlock &rArr; CMDtoCard &rArr; setRegister
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeBlock
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readBlock
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cardAuthPWD
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;halt
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculateCRC
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anticoll
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RC522_Request
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CMDtoCard
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearRegister
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;puts
+</UL>
+<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
 
-<P><STRONG><a name="[a1]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf5.o(i.__0printf$5))
+<P><STRONG><a name="[a9]"></a>__0printf$5</STRONG> (Thumb, 22 bytes, Stack size 24 bytes, printf5.o(i.__0printf$5), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+</UL>
+
+<P><STRONG><a name="[b4]"></a>__1printf$5</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf5.o(i.__0printf$5), UNUSED)
+
+<P><STRONG><a name="[a8]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf5.o(i.__0printf$5))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anticoll
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeBlock
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeCard
 </UL>
 
-<P><STRONG><a name="[b0]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[b5]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[b1]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[b6]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[b2]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[b7]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[70]"></a>puts</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, puts.o(i.puts))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = puts
 </UL>
 <BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AntennaON
+<BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeBlock
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AntennaON
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeCard
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RC522_Init
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -963,17 +1039,17 @@ Local Symbols
 <P><STRONG><a name="[95]"></a>UART_SetConfig</STRONG> (Thumb, 238 bytes, Stack size 8 bytes, stm32f4xx_hal_uart.o(.text.UART_SetConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = UART_SetConfig &rArr; __aeabi_uldivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK2Freq
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 <BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Init
 </UL>
 
-<P><STRONG><a name="[a5]"></a>_printf_core</STRONG> (Thumb, 658 bytes, Stack size 104 bytes, printf5.o(i._printf_core), UNUSED)
+<P><STRONG><a name="[aa]"></a>_printf_core</STRONG> (Thumb, 658 bytes, Stack size 104 bytes, printf5.o(i._printf_core), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0printf$5
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0printf$5
 </UL>
 <P>
 <H3>
